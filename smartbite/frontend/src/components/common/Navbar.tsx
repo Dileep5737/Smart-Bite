@@ -90,7 +90,7 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16 sm:h-20">
           
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
+          <Link to={user ? getDashboardPath(role) : "/"} className="flex items-center space-x-3 group">
             <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-tr from-[#166534] to-[#22C55E] flex items-center justify-center shadow-md shadow-emerald-900/10 group-hover:scale-105 transition-transform duration-200">
               <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
@@ -236,7 +236,7 @@ export const Navbar: React.FC = () => {
             <button
               onClick={() => {
                 logout();
-                navigate('/login');
+                navigate('/');
               }}
               title="Sign Out"
               className="p-2 text-slate-400 hover:text-rose-600 rounded-lg transition-colors hidden sm:block"

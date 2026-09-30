@@ -36,9 +36,14 @@ export const App: React.FC = () => {
     <AuthProvider>
       <BrowserRouter>
         <Routes>
+          {/* Primary Landing Page: Sign In */}
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+
           {/* Public Pages with Top Nav & Footer */}
           <Route element={<PublicLayout />}>
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/landing" element={<LandingPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/how-it-works" element={<HowItWorksPage />} />
             <Route path="/features" element={<FeaturesPage />} />
@@ -47,10 +52,6 @@ export const App: React.FC = () => {
             <Route path="/marketplace" element={<MarketplacePage />} />
             <Route path="/studio" element={<StudioFooter />} />
           </Route>
-
-          {/* Standalone Auth Pages */}
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
 
           {/* Authenticated Dashboard Pages with Sidebar */}
           <Route element={<DashboardLayout />}>
